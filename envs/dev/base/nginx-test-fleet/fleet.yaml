@@ -1,0 +1,14 @@
+namespace: nginx-test-fleet
+
+helm:
+  releaseName: nginx-test
+  chart: "nginx"
+  repo: "https://charts.bitnami.com/bitnami"
+  version: "9.9.7"
+  force: false
+  timeoutSeconds: 5
+  values:
+    replicas: 2
+  clusterSelector:
+    matchLabels:
+      env: prod
